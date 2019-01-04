@@ -1,0 +1,135 @@
+<!--pages/confirmorder/confirmorder.wxml-->
+<view class="confirmorder">
+    <view wx:if="{{productList.orderStatus == 0 || productList.orderStatus == 1}}" class="orderstatus">
+        <view class="orderstatus_left">
+            <text>待付款</text>
+            <text>请尽快完成付款</text>
+        </view>
+        <view class="orderstatus_right">
+            <image class="right_img" src="../../image/fukuaning.png"/>
+        </view>
+    </view>
+    <view wx:elif="{{productList.orderStatus == 3}}" class="orderstatus">
+        <view class="orderstatus_left">
+            <text>待发货</text>
+            <text>鞋子正在加工中，预计发货时间为25天，请耐心等待</text>
+        </view>
+        <view class="orderstatus_right">
+            <image class="right_img" src="../../image/fahuoing.png"/>
+        </view>
+    </view>
+    <view wx:elif="{{productList.orderStatus == 4}}" class="orderstatus">
+        <view class="orderstatus_left">
+            <text>待收货</text>
+            <text>鞋子已经在派送途中了</text>
+        </view>
+        <view class="orderstatus_right">
+            <image class="right_img" src="../../image/shouhuoing.png"/>
+        </view>
+    </view>
+    <view wx:elif="{{productList.orderStatus == 2}}" class="orderstatus">
+        <view class="orderstatus_left">
+            <text>待取件</text>
+            <text>取件码是 fesd23 ，快递员将于今天15：00之前上门</text>
+        </view>
+        <view class="orderstatus_right">
+            <image class="right_img" src="../../image/qujianing.png"/>
+        </view>
+    </view>
+    <view wx:elif="{{productList.orderStatus == 5}}" class="orderstatus">
+        <view class="orderstatus_left">
+            <text>已完成</text>
+            <text>您已成为平台尊贵的专属定制vip</text>
+        </view>
+        <view class="orderstatus_right">
+            <image class="right_img" src="../../image/wanchenging.png"/>
+        </view>
+    </view>
+
+
+    <view class="head_course">
+        <view class="course_text">
+            <text>基础鞋款</text>
+            <text class="line"></text>
+            <text>匠人加工</text>
+            <text class="line"></text>
+            <text>专属定制</text>
+        </view>
+        <view class="course_img">
+            <image src="../../image/whiteshose.png"/>
+            <view class="center_img">
+                <image src="../../image/craftsman.png"/>
+                <view class="appointment_time">
+                    <image src="../../image/appointment_time.png" />
+                    <text>加工时长{{days}}天</text>
+                </view>
+            </view>
+            <image src="../../image/finished_product.png"/>
+        </view>
+    </view>
+    <view class="addrss">
+        <view class="pick_address" wx:if="{{noAddress}}">
+            <text class="address_left">取货地址</text>
+            <text class="address_center">请添加收货地址</text>
+        </view>
+        <view class="havepick_address" wx:else>
+            <view class="user_name">
+                <text class="pack_name">{{productList.receiveAdd.name}}</text>
+                <text>{{phone}}</text> 
+            </view>
+            <view class="user_addrass">
+                <text class="address_left">取货地址</text>
+                <text class="address_center">{{productList.receiveAdd.province + productList.receiveAdd.city + productList.receiveAdd.district + productList.receiveAdd.address}}</text>
+            </view>           
+        </view>
+        <view class="tack_address">
+            <text class="address_left">送货地址</text>
+            <text class="address_center">默认和取件地址相同</text>
+        </view>
+    </view>
+
+    <view class="pick_time">
+        <picker
+            mode="multiSelector"
+            bindchange="bindMultiPickerChange"
+            bindcolumnchange="bindMultiPickerColumnChange"
+            value="{{multiIndex}}"
+            range="{{multiArray}}"
+        >
+
+            <image class="time_icon" src="../../image/appointment_time.png" />
+            <!--<text class="nametext">预约取件时间（两小时内）</text>-->
+            <text class="picker nametext">
+            预约取件时间（{{multiArray[0][multiIndex[0]]}} -- {{multiArray[1][multiIndex[1]]}}）
+            </text>
+            <image class="picktimeright" src="../../image/pick_time_icon.png" />
+        </picker>
+    </view>
+
+
+    <view class="order">
+        <view class="orderlist">
+            <view class="order_left">
+                <image src="{{item.img}}" />
+            </view>
+            <view class="order_right">
+                <text class="productName">乔丹一代</text>
+                <text class="describe">黑色鳄鱼皮全身定制</text>
+                <text class="shoesPrice"><text class="shoesRmb">¥</text>1334</text>
+            </view>
+        </view>
+        <text class="orderlaber">订单编号：<text class="ordernum">{{productList.orderNO}}</text></text>
+        <text class="orderlaber">下单时间：<text class="">{{productList.createTime}}</text></text>
+    </view>
+
+    <view>
+        <view class="order_button" wx:if="{{productList.orderStatus == 0 || productList.orderStatus == 1}}" >
+            <text class="button_left">取消订单</text>
+            <text class="button_right" bindtap="orderPay">继续付款</text>
+        </view> 
+        <view wx:elif="{{productList.orderStatus == 4}}" class="save" bindtap="orderPay"><text class="">查看物流</text></view>        
+        <view wx:elif="{{productList.orderStatus == 5}}" class="save" bindtap="orderPay"><text class="">申请售后</text></view>   
+       
+    </view>
+    
+</view>

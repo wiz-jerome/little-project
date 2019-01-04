@@ -1,0 +1,46 @@
+<!--pages/address/address.wxml-->
+<view class="address">
+    <view>
+        <view class="inputname">
+            <input class="pinputname" type="text" placeholder="姓名" />            
+        </view>
+        <view class="inputname">
+            <input class="pinputname" type="number" maxlength="11" placeholder="电话" />
+        </view>
+        
+        <view class="pickerbox">
+            <view class="picker">
+                <!--省-->
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                        <text class="inaddress">{{array[index]}}</text>
+                </picker>
+            </view>
+            <view class="picker">
+                <!--市-->
+                <picker bindchange="bindcityChange" value="{{cityindex}}" range="{{cityarray}}">
+                        <text class="inaddress">{{cityarray[cityindex]}}</text>
+                </picker>
+            </view>
+            <view class="picker">
+                <!--区域-->
+                <picker bindchange="bindareaChange" value="{{areaindex}}" range="{{areaarray}}">
+                        <text class="inaddress">{{areaarray[areaindex]}}</text>
+                </picker>
+            </view>
+            
+        </view>
+        
+        <view class="inputname">
+            <input class="pinputname" type="text" placeholder="详细地址" />
+        </view>
+        <view class="set_default">
+            <text>设为默认</text>
+            <view class="body-view">
+                <switch checked bindchange="switchChange"/>
+            </view>
+        </view>
+
+        <view class="save" bindtap="insertAddress">保存</view>
+        <view class="delete" bindtap="deleteAddress">删除地址</view>
+    </view>
+</view>

@@ -1,0 +1,84 @@
+<!--pages/confirmorder/confirmorder.wxml-->
+<view class="confirmorder">
+    <view class="head_course">
+        <view class="course_text">
+            <text>基础鞋款</text>
+            <text class="line"></text>
+            <text>匠人加工</text>
+            <text class="line"></text>
+            <text>专属定制</text>
+        </view>
+        <view class="course_img">
+            <image src="../../image/whiteshose.png"/>
+            <view class="center_img">
+                <image src="../../image/craftsman.png"/>
+                <view class="appointment_time">
+                    <image src="../../image/appointment_time.png" />
+                    <text>加工时长{{days}}天</text>
+                </view>
+            </view>
+            <image src="../../image/finished_product.png"/>
+        </view>
+    </view>
+    <view class="addrss">
+        <view class="pick_address" wx:if="{{noAddress}}">
+            <text class="address_left">取货地址</text>
+            <text class="address_center">请添加收货地址</text>
+            <image class="address_right" src="../../image/right_angle.png" />
+        </view>
+        <view class="havepick_address" wx:else>
+            <view class="user_name">
+                <text class="pack_name">{{defaultAddress.name}}</text>
+                <text>{{phone}}</text> 
+            </view>
+            <view class="user_addrass">
+                <text class="address_left">取货地址</text>
+                <text class="address_center">{{defaultAddress.province+defaultAddress.city+defaultAddress.district+defaultAddress.address}}</text>
+                <image class="address_right" src="../../image/right_angle.png" />
+            </view>           
+        </view>
+        <view class="tack_address">
+            <text class="address_left">送货地址</text>
+            <text class="address_center">默认和取件地址相同</text>
+            <text wx:if="{{!noAddress}}" class="revamp">修改</text>
+        </view>
+    </view>
+
+    <view class="pick_time">
+        <picker
+            mode="multiSelector"
+            bindchange="bindMultiPickerChange"
+            bindcolumnchange="bindMultiPickerColumnChange"
+            value="{{multiIndex}}"
+            range="{{multiArray}}"
+        >
+
+            <image class="time_icon" src="../../image/appointment_time.png" />
+            <!--<text class="nametext">预约取件时间（两小时内）</text>-->
+            <text class="picker nametext">
+            预约取件时间（{{multiArray[0][multiIndex[0]]}} -- {{multiArray[1][multiIndex[1]]}}）
+            </text>
+            <image class="picktimeright" src="../../image/pick_time_icon.png" />
+        </picker>
+    </view>
+
+
+    <view class="order">
+        <text class="orderlaber">订单编号：<text class="ordernum">{{orderNO}}</text></text>
+        <view class="orderlist" wx:for="{{productList}}" wx:key="{{item.orderNo}}">
+            <view class="order_left">
+                <image src="{{item.img}}" />
+            </view>
+            <view class="order_right">
+                <text class="productName">{{item.productName}}</text>
+                <text class="describe">{{item.describe}}</text>
+                <text class="shoesPrice"><text class="shoesRmb">¥</text>{{item.cost}}</text>
+            </view>
+        </view>
+    </view>
+
+    <view>
+        <view class="save" bindtap="orderPay">支付¥<text class="">{{totalCost}}</text></view>        
+    </view>
+    
+</view>

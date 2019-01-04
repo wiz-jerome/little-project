@@ -1,0 +1,166 @@
+<!--pages/shopcart/shopcart.wxml-->
+<view class="page">
+    <!--侧边栏个人中心--->
+    <view class="page-bottom">
+        <view>
+            <image class="head_photo" src="../../image/head_photo.png" />
+            <view class="compile_photo">
+                <text class="photonum" >15921845363</text>
+                <image class="ptimg_compile" src="../../image/compile.png"></image> 
+            </view>
+        </view>
+        <view class="page-content">
+            <view  class="wc" bindtap="goShopcar">
+                <text class="wctext">我的购物车</text>
+                <image src="../../image/unfold.png"></image>
+            </view>
+            <view  class="wc" bindtap="goOrder">
+                <text class="wctext">我的订单</text>
+                <image src="../../image/unfold.png"></image>
+            </view>
+            <view  class="wc" bindtap="goMyaddress">
+                <text class="wctext">我的地址</text>
+                <image src="../../image/unfold.png"></image>
+            </view>
+            <view  class="wc">
+                <text class="wctext">客服电话</text>
+                <text class="kefunumber">021-56669882</text>
+            </view>
+            <view  class="wc" bindtap="goSuggestion">
+                <text class="wctext">反馈意见</text>
+                <image src="../../image/unfold.png"></image>
+            </view>
+            <!--侧边栏个人中心
+            // <view  class="wc" wx:for="{{address}}" wx:key="item.id">
+            //     <text>{{item.areaName}}</text>
+            // </view>
+            --->
+        </view>
+        <text class='quit'>退出登陆</text>
+    </view>
+    <!--首页主要内容--->
+    <view bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start" class="page-top {{open ? 'c-state1' : ''}}">
+        <view class="disk" wx:if="{{masktype}}"  bindtap="click_end">
+        </view>
+
+        <!--头部菜单栏--->
+        <view class='head_icon'>
+          <view bindtap="tap_ch"><image src='../../image/menu_bar.png'></image></view>
+          <view><image src='../../image/pricelist.png'></image></view>
+        </view>
+
+        <!--全屏滚动--->
+        <view class="container container-fill">
+            <!-- <view class="scroll-fullpage" bindtouchstart="scrollTouchstart" bindtouchmove="scrollTouchmove" bindtouchend="scrollTouchend" style="transform:translateY(-{{scrollindex*100}}%);margin-top: {{margintop}}px"> -->
+                <!-- <view class="section section01 {{scrollindex==0?'active':''}}" wx:for="{{imgurlList}}" wx:key="item"> -->
+                    <view class='name'>
+                        <text class='proname_two'>{{imgurlList.name}}</text>
+                        </view>
+                        <swiper class='swiper' indicator-dots="{{indicatorDots}}"
+                        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:{{swiperHeight}}vh">
+                        <block wx:if="{{imagesList}}" wx:for="{{imagesList}}" wx:key="res.id" wx:for-item="res">
+                            <swiper-item>
+                            <image src="{{res}}" class="slide-image" width="355" height="240" style="margin-top:{{marginTop}}vh"/>
+                            </swiper-item>
+                        </block>
+                        </swiper>
+
+
+
+                        <!--部位--->
+                        <view class='scroll_box' wx:if="{{scrollshow}}">
+                            <scroll-view class="box" scroll-x="true">
+                                <view class="box-item" wx:for="{{partList}}" data-type="part" data-item='{{item}}' bindtap='textureClick'>
+                                    <image src='{{item.img}}'></image>
+                                    <text class='partname'><text class="childname">{{item.name}}</text></text>
+                                </view>
+                            </scroll-view>
+                        </view>
+
+                        <!--材质--->
+                        <view class='scroll_box' wx:if="{{textureshow}}">
+                            <scroll-view class="box" scroll-x="true" >
+                                <view class="box-item material" wx:for="{{textureList}}" data-type="texture" data-item="{{item}}" bindtap='textureClick'>
+                                    <image src='{{item.materialImage}}'></image>
+                                    <text class='partname'><text class="childname">{{item.materialName}}</text></text>
+                                </view>
+                            </scroll-view>
+                        </view>
+
+                        <!--颜色--->
+                        <view class='scroll_box' wx:if="{{colorshow}}">
+                            <scroll-view class="box" scroll-x="true" >
+                                <view class="box-item material" wx:for="{{colorList}}" data-type="color" data-item="{{item}}" bindtap='textureClick'>
+                                    <view style="background:{{item.hexadecimal}}" class="color_product"></view>
+                                    <text class='partname'><text class="childname">{{item.colorName}}</text></text>
+                                </view>
+                            </scroll-view>
+                        </view>
+
+                        <!--已加入购物车--->
+                        <view class='scroll_box' wx:if="{{addcared}}">
+                            <view class="addcared">
+                                <text>已加入购物车</text>
+                                <image bindtap="closeAddcard" class="xx" src="../../image/addcared.png" />
+                            </view>
+                        </view>
+
+                        <!--编辑设计--->
+                        <view bindtap='editorialClick' data-index="1" wx:if="{{editorialshow}}" class='color_bottom'>
+                            <view class='color_text'>
+                                <image src='../../image/color_circle.png'></image>
+                                <text class='editorial'>编辑设计</text>
+                            </view>
+                        </view>
+
+                        <!--完成--->
+                        <view bindtap='editorialClick' data-type="{{okType}}" data-index="2" wx:else class='finish_bottom'>
+                            <view class='color_text'>
+                                <text class='editorial'>完成</text>
+                            </view>
+                        </view>
+
+                        <!--底部对勾与返回--->
+                        <view wx:if="{{trueshow}}" class='true_back'>
+                            <view class='back_symbol' data-type="{{backType}}" bindtap='backClick'>
+                                <image src='../../image/back_icon.png'></image>
+                            </view>
+                            <view class='true_symbol' bindtap='trueClick'>
+                                <image src='../../image/true_icon.png'></image>
+                            </view>
+
+                        </view>
+
+                        <!--加入购物车与金额--->
+                        <view wx:if="{{pricecar}}" class='true_back'>
+                            <view class='back_symbol' data-type="{{backType}}" bindtap='addShopcar'>
+                                <text class='partname addcar'><text class="childname">加入购物车</text></text>
+                            </view>
+                            <view class='addprice' bindtap='trueClick'>
+                                <text class='pricenum'><text class="childname"><text>¥</text> 1334</text></text>
+                            </view>
+
+                        </view>
+
+                        <!--查看购物车与支付金额--->
+                        <view wx:if="{{checkcar}}" class='true_back'>
+                            <view class='back_symbol carleft' data-type="{{backType}}" bindtap='goShopcar'>
+                                <text class='partname addcar'><text class="childname">查看购物车</text></text>
+                            </view>
+                            <view class='addprice' bindtap='trueClick'>
+                                <text class='pricenum'><text class="childname"><text>¥</text> 1334</text></text>
+                            </view>
+
+                        </view>
+                <!-- </view> -->
+            <!-- </view> -->
+        </view>
+
+
+
+
+
+        
+    </view>
+</view>
+

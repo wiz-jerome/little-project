@@ -1,0 +1,34 @@
+<!--pages/myaddress/myaddress.wxml
+<view class='address' data-url="insertAddress" bindtap='getaddress'>新增用户地址</view>
+<view class='address' data-url="updateAddress" bindtap='getaddress'>修改用户地址</view>
+<view class='address' data-url="delAddress" bindtap='getaddress'>删除用户地址</view>
+<view class='address' data-url="getAddress" bindtap='getaddress'>获取用户地址</view>
+-->
+<view class="myaddress">
+    <view class="noproduct" wx:if="{{addressList.length === 0}}">
+        <image src="../../image/noaddress.png" />
+        <text>请添加收货地址</text>
+    </view>
+    <view class="address_top">
+        <view class="addressbox" wx:for="{{addressList}}" wx:key="{{item.id}}">
+            <view class="addressbox_left">
+                <image src="../../image/select_no.png" />
+                <image src="../../image/select_ok.png" />
+            </view>
+            <view class="addressbox_right">
+                <view class="addressbox_left_top">
+                    <text class="user_name">{{item.name}}</text>
+                    <text class="user_num">{{item.phone}}</text>
+                    <text wx:if="{{item.isDefault == '1'}}" class="default">默认</text>
+                </view>
+                <view class="addressbox_left_bottom">
+                    <text>{{item.province+item.city+item.district+item.address}}</text>
+                    <text class="compile_address" bindtap="goCompile">编辑</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="address_bottom" bindtap='goAddress'>
+        + 添加地址
+    </view>
+</view>

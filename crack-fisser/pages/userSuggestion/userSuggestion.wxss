@@ -1,0 +1,69 @@
+/* pages/userSuggestion/userSuggestion.wxss */
+page{
+    background: #fff;
+}
+.contaner{
+    width: 662rpx;
+    margin: 0 auto;
+    height: 422rpx;
+    border: 1px solid #CACACA;
+    margin-top: 30rpx;
+}
+.contaner textarea{
+    width: 614rpx;
+    height: 374rpx;
+    padding: 24rpx;
+    font-size: 24rpx;
+    color: #000;
+}
+.button{
+    width: 662rpx;
+    height: 88rpx;
+    margin: 0 auto;
+    background: #000;
+    color: #fff;
+    line-height: 88rpx;
+    text-align: center;
+    font-size: 28rpx;
+    font-weight: 600;
+    margin-top: 86rpx; 
+}
+
+
+.mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.3;
+}
+.success{
+    width: 508rpx;
+    height: 292rpx;
+    position: absolute;
+    top: 403rpx;
+    left: 50%;
+    margin-left: -254rpx;
+    background: #fff;
+    border-radius: 4px;
+}
+.success image{
+    width: 102rpx;
+    height: 102rpx;
+    margin-left: 203rpx;
+    margin-top: 38rpx;
+
+}
+.messge{
+    font-size: 32rpx;
+    text-align: center;
+    display: block;
+}
+.suggestion{
+    font-size: 24rpx;
+    color: #8F8F8F;
+    text-align: center;
+    margin-top: 20rpx;
+}

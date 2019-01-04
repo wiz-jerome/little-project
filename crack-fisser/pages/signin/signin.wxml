@@ -1,0 +1,10 @@
+<view class="container container-fill">
+	<view class="scroll-fullpage" bindtouchstart="scrollTouchstart" bindtouchmove="scrollTouchmove" bindtouchend="scrollTouchend" style="transform:translateY(-{{scrollindex*100}}%);margin-top: {{margintop}}px">
+		<view class="section section01 {{scrollindex==0?'active':''}}" wx:for="{{textList}}" wx:key="item.id" style="background:#000;">
+			<text class="section-maintitle">{{item.text}}</text>
+			<text class="section-subtitle">{{item.text}}</text>
+		</view>
+        
+
+	</view>
+</view>

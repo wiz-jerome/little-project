@@ -1,0 +1,324 @@
+/* pages/orderDetail/orderDetail.wxss */
+page{
+    background: #fff;
+}
+.confirmorder{
+    width: 100%;
+    background: #fff;
+    height: 100%;
+    
+}
+
+.orderstatus{
+    width: 100%;
+    height: 170rpx;
+    background: #222731;
+    color: #fff;
+    font-size: 36rpx;
+    margin-bottom: 30rpx;
+}
+.orderstatus_left{
+    float: left;
+}
+.orderstatus_left text{
+    display: block;
+    margin-top: 40rpx;
+    margin-left: 47rpx;
+    font-weight:500;
+}
+.orderstatus_left text:last-child{
+    font-size: 24rpx;
+    margin-top: 12rpx;
+    font-weight:100;
+}
+.orderstatus_right{
+    float: right;
+}
+.right_img{
+    width: 80rpx;
+    height: 80rpx;
+    margin-top: 47rpx;
+    margin-right: 39rpx;
+}
+
+
+.head_course{
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 10rpx;
+    height: 100%;
+}
+.course_text{
+    color: #343437;
+    font-size: 24rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    margin-left: 99rpx;
+    
+
+}
+.course_text text{
+    float: left;
+}
+.course_text .line{
+    width: 100rpx;
+    background: #393E46;
+    height: 1px;
+    margin: 23rpx 17rpx 0 17rpx;
+}
+.course_img{
+    margin-top: 12rpx;
+    margin-left: 47rpx;
+    background: #fff;
+    height: 114rpx;
+}
+.course_img image{
+    width: 200rpx;
+    height: 114rpx;
+    float: left;
+}
+.center_img{
+    float: left;
+    margin: 0 28rpx;
+    position: relative;
+}
+.appointment_time{
+    position: absolute;
+    bottom: 0;
+    background: #00AACC;
+    width: 200rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    left: 0;
+    font-size: 18rpx;
+    color: #343437;
+}
+.appointment_time image{
+    width: 28rpx;
+    height: 28rpx;
+    margin-left: 36rpx;
+}
+
+
+.pick_address{
+    display: flex;
+    margin-top: 76rpx;
+    margin-bottom: 71rpx;
+}
+
+.address_left{
+    background: #00AACC;
+    width: 84rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    margin-left: 46rpx;
+    font-size: 18rpx;
+    color: #fff;
+    text-align: center;
+    margin-top: 6rpx;
+    margin-right: 16rpx;
+}
+.address_center{
+    width: 498rpx;
+    margin-right: 16rpx;
+    color: #CACACA;
+    font-size: 28rpx;
+}
+/* .address_right{
+    width: 36rpx;
+    height: 36rpx;
+    float: right;
+    margin-left: 28rpx;
+    margin-top: 5rpx;
+} */
+.tack_address{
+    display: flex;
+}
+.tack_address .address_left{
+    background: #CC0000;
+}
+.tack_address .address_center{
+
+    width: 470rpx;
+}
+.havepick_address{
+    margin: 69rpx 0 22rpx 46rpx;
+    /* display: flex; */
+    /* justify-content: center; */
+}
+.havepick_address .address_left{
+    margin-left: 0;
+}
+/* .havepick_address .address_right{
+    width: 58rpx;
+    height: 58rpx;
+    margin-top: -45rpx;
+    margin-left: 0rpx;
+} */
+
+.user_name{
+    width: 100%;
+    display: block;
+    font-size: 36rpx;
+    margin-bottom: 23rpx;
+}
+.user_addrass{
+    display: block;
+    display: flex;
+}
+.user_name text{
+    display: inline;
+}
+.pack_name{
+    margin-right: 50rpx;
+}
+/* 预约时间 */
+.pick_time{
+    width: 662rpx;
+    margin: 0 auto;
+    height: 58rpx;
+    background: #F7F7F7;
+    margin-top: 30rpx;
+}
+.time_icon{
+    width: 48rpx;
+    height: 48rpx;
+    float: left;
+    margin: 5rpx 5rpx 0 10rpx;
+}
+.nametext{
+    font-size:24rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(37,38,46,1);
+    display: inline-block;
+    line-height: 20rpx;
+    float: left;
+
+}
+.picktimeright{
+    width: 48rpx;
+    height: 48rpx;
+    float: right;
+    margin-right: 20rpx;
+    margin-top: 5rpx;
+}
+
+
+.order{
+    width: 662rpx;
+    height: 100%;
+    margin: 0 auto;
+    border-top: 1px solid #E6E6E6;
+    padding-top: 56rpx;
+}
+.orderlaber{
+    font-size: 24rpx;
+    color: #393E46;
+    font-weight: bolder;
+    padding: 24rpx 0 10rpx 0;
+    display: block;
+}
+.orderlaber:last-child{
+    padding-top: 0;
+}
+.ordernum{
+    font-weight: 400;
+}
+.orderlist{
+    width: 100%;
+    height: 200rpx;
+    background:rgba(250,250,250,1);  
+    display: flex;
+}
+.order_left{
+    width: 200rpx;
+    height: 200rpx;
+    background: #CACACA;
+    float: left;
+}
+.order_left image{
+    width: 190rpx;
+    height: 84rpx;
+    margin-left: 5rpx;
+    margin-top: 54rpx;
+}
+.order_right{
+    float: left;
+}
+.order_right text{
+    display: block;
+}
+.productName{
+    font-size: 38rpx;
+    margin-left: 30rpx;
+    margin-top: 24rpx;
+}
+.describe{
+    height: 60rpx;
+    margin-left: 30rpx;
+    font-size: 24rpx;
+    color: #8F8F8F;
+}
+.shoesPrice{
+    margin: 0rpx 0 0 30rpx;
+    font-size:46rpx;
+    font-family:DINAlternate-Bold;
+    font-weight:bold;
+    color:rgba(204,0,0,1);
+    display: inline-block !important;
+  }
+.shoesRmb{
+    font-size: 20rpx;
+    display: inline-block !important;
+  }
+
+
+.order_button{
+    width:100%;
+    height:125rpx;
+    line-height: 125rpx;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 78rpx;
+    font-size: 28rpx;
+    position: fixed;
+    bottom: 0;
+}
+.button_left{
+    display: block;
+    width: 280rpx;
+    line-height: 125rpx;
+    color: #343437;
+    font-size: 28rpx;
+    font-weight: 600;
+    letter-spacing:1px;
+    border-top: 1px solid#E6E6E6;
+    background: #fff;
+    float: left;
+}
+.button_right{
+    display: block;
+    width: 470rpx;
+    background: #000000;
+    color: #fff;
+    font-size: 38rpx;
+    line-height: 125rpx;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing:1px;
+    float: left;
+}
+.save{
+    width:100%;
+    height:125rpx;
+    line-height: 125rpx;
+    text-align: center;
+    color: white;
+    background:rgba(0,0,0,1);
+    margin: 0 auto;
+    margin-top: 78rpx;
+    font-size: 28rpx;
+    position: fixed;
+    bottom: 0;
+}

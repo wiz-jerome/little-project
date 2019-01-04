@@ -1,0 +1,19 @@
+<!--pages/userSuggestion/userSuggestion.wxml-->
+<view class="contaner">
+    <textarea 
+    bindinput="bindTextAreaBlur"
+    placeholder="您的意见，对我们十分珍贵。"
+    placeholder-style="font-size:24rpx;"
+    maxlength=-1
+     />
+</view>
+<view bindtap="insertSuggestion" class="button">提交</view>
+<view wx:if="{{success}}">
+    <view class="mask">
+    </view>
+    <view class="success">
+        <image src="../../image/success.png" />
+        <text class="messge">提交成功</text>
+        <view class="suggestion">您的意见对我们十分珍贵</view>
+    </view>
+</view>

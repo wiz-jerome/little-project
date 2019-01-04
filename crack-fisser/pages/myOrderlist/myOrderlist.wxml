@@ -1,0 +1,44 @@
+<!--pages/myOrderlist/myOrderlist.wxml-->
+<view>
+  
+  <view class="noproduct" wx:if="{{productList.length === 0}}">
+    <image src="../../image/no_order.png" />
+    <text>订单为空，快去下单吧</text>
+  </view>
+  <view>
+    <view class='head_orderlist'>
+      <text class="{{currentTab==100?'hover':''}}" data-current="100" bindtap="clickTab">全部</text>
+      <text class="{{currentTab==0?'hover':''}}" data-current="0" bindtap="clickTab">待付款</text>
+      <text class="{{currentTab==2?'hover':''}}" data-current="2" bindtap="clickTab">待取件</text>
+      <text class="{{currentTab==3?'hover':''}}" data-current="3" bindtap="clickTab">待发货</text>
+      <text class="{{currentTab==4?'hover':''}}" data-current="4" bindtap="clickTab">待收货</text>
+      <text class="{{currentTab==5?'hover':''}}" data-current="5" bindtap="clickTab">已完成</text>
+      <text class="{{currentTab==6?'hover':''}}" data-current="6" bindtap="clickTab">售后</text>
+    </view>
+    <view class="list_box">
+      <view class="order" wx:for="{{productList}}" wx:key="{{item.orderNO}}" data-orderNO="{{item.orderNO}}" bindtap='goOrderdetail'>
+        <text class="orderlaber">订单编号：<text class="ordernum">{{item.orderNO}}</text></text>
+        <view class="orderlist" wx:for="{{item.product}}" wx:for-item="res" wx:key="{{res.uniqueCode}}">
+            <view class="order_left">
+                <image src="{{res.img}}" />
+            </view>
+            <view class="order_right">
+              <view class="nameortype">
+                <text class="productName">{{res.productName}}</text>
+                <text class="productType" wx:if="{{item.orderStatus == 0 || item.orderStatus == 1}}">待付款</text>
+                <text class="productType" wx:elif="{{item.orderStatus == 2}}">待取件</text>
+                <text class="productType" wx:elif="{{item.orderStatus == 3}}">待发货</text>
+                <text class="productType" wx:elif="{{item.orderStatus == 4}}">待收货</text>
+                <text class="productType" wx:elif="{{item.orderStatus == 5}}">已完成</text>
+                <text class="productType" wx:elif="{{item.orderStatus == 6}}">售后</text>
+              </view>
+              
+              <text class="describe">{{res.describe}}</text>
+              <text class="shoesPrice"><text class="shoesRmb">¥</text>{{res.cost}}</text>
+            </view>
+        </view>
+      </view>
+    </view>
+      
+  </view>
+</view>

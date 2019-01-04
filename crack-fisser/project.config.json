@@ -1,0 +1,110 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.4",
+	"appid": "wxbb8e03b9dd741c69",
+	"projectname": "crack-fisser",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 10,
+			"list": [
+				{
+					"id": -1,
+					"name": "logs",
+					"pathName": "pages/logs/logs",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "shopcart",
+					"pathName": "pages/shopcart/shopcart",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "signin",
+					"pathName": "pages/signin/signin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "address",
+					"pathName": "pages/address/address",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "myaddress",
+					"pathName": "pages/myaddress/myaddress",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "confirmorder",
+					"pathName": "pages/confirmorder/confirmorder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "myOrderlist",
+					"pathName": "pages/myOrderlist/myOrderlist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "orderDetail",
+					"pathName": "pages/orderDetail/orderDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "userSuggestion",
+					"pathName": "pages/userSuggestion/userSuggestion",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "afterSale",
+					"pathName": "pages/afterSale/afterSale",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "logisticsMap",
+					"pathName": "pages/logisticsMap/logisticsMap"
+				}
+			]
+		}
+	}
+}

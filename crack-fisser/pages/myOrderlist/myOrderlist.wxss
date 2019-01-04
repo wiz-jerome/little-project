@@ -1,0 +1,145 @@
+/* pages/myOrderlist/myOrderlist.wxss */
+page{
+    background: #fff;
+}
+.noproduct{
+    width: 100%;
+    height: 100%;
+    position: relative;
+  
+  
+  }
+  .noproduct image{
+    width: 140rpx;
+    height: 140rpx;
+    position: absolute;
+  
+    left: 50%;
+    margin-top: 350rpx;
+    margin-left: -70rpx;
+  }
+  .noproduct text{
+    width: 100%;
+    position: absolute;
+    margin-top: 530rpx;
+    color: #8F8F8F;
+    font-size: 36rpx;
+    text-align: center;
+    font-weight:400;
+  }
+.orderlist{
+  width: 100%;
+  height: 100%;
+
+}
+.head_orderlist{
+  width: 702rpx;
+  padding: 0 24rpx;
+  background: #fff;
+  position: fixed;
+  top: 0px;
+  z-index: 10;
+
+}
+.head_orderlist text{
+  /* width: 14.28%; */
+  display: inline-block;
+  color: #8F8F8F;
+  font-size: 22rpx;
+  padding: 25rpx 18rpx;
+  text-align: center;
+
+}
+.hover{
+  color: #000000 !important;
+  font-size: 26rpx !important;
+  font-weight:600 !important;
+  border-bottom: 4px solid #000;
+}
+
+.list_box{
+    margin-top: 84rpx;
+    border-top: 10rpx solid #F7F7F7;
+}
+.order{
+    width: 90%;
+    padding: 0 5%;
+    background: #fff;
+    margin-bottom: 10rpx;
+    padding-bottom: 30rpx;
+
+}
+.orderlaber{
+    font-size: 26rpx;
+    color: #393E46;
+    font-weight: bolder;
+    padding: 30rpx 0 24rpx 0;
+    display: block;
+}
+.ordernum{
+    font-weight: 400;
+}
+.orderlist{
+    width: 100%;
+    height: 200rpx;
+    background:rgba(250,250,250,1);  
+    display: flex;
+    margin-bottom: 10rpx;
+}
+.order_left{
+    width: 200rpx;
+    height: 200rpx;
+    background: #CACACA;
+    float: left;
+}
+.order_left image{
+    width: 190rpx;
+    height: 84rpx;
+    margin-left: 5rpx;
+    margin-top: 54rpx;
+}
+.order_right{
+    float: left;
+    width:100%;
+
+}
+.order_right text{
+    display: block;
+}
+.nameortype{
+  position: relative;
+  height: 62rpx;
+  width: 100%;
+}
+.productName{
+    font-size: 38rpx;
+    margin-left: 30rpx;
+    margin-top: 24rpx;
+}
+.productType{
+  display: block;
+  color: #00AACC;
+  font-size: 24rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 5rpx;
+}
+.describe{
+    height: 60rpx;
+    margin-left: 30rpx;
+    font-size: 24rpx;
+    color: #8F8F8F;
+    clear: both;
+}
+.shoesPrice{
+    margin: 0rpx 0 0 30rpx;
+    font-size:46rpx;
+    font-family:DINAlternate-Bold;
+    font-weight:bold;
+    color:rgba(204,0,0,1);
+    display: inline-block !important;
+  }
+.shoesRmb{
+    font-size: 20rpx;
+    display: inline-block !important;
+  }

@@ -1,0 +1,67 @@
+/* pages/address/address.wxss */
+.address{
+    color: #8F8F8F;
+    font-size: 26rpx;
+
+}
+.inputname{
+    width: 662rpx;
+    margin: 0 auto;
+    height: 86rpx;
+    line-height: 86rpx;
+    /* margin-left: 5%; */
+    margin: 0 auto;
+    /* margin-left: 10rpx; */
+    border: 1rpx solid #CACACA;
+    margin-top: 30rpx;
+
+}
+.pinputname{
+    margin-left: 30rpx;
+    height: 86rpx;
+}
+.pickerbox{
+    width: 662rpx;
+    margin: 0 auto;
+    height: 86rpx;
+    line-height: 86rpx;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: space-around;
+
+}
+.pickerbox .picker{
+    width: 30%;
+    border: 1rpx solid #CACACA;
+
+}
+.pickerbox .picker:nth-child(2){
+    margin: 0 5%;
+}
+.picker picker{
+    width: 100%;
+    height: 86rpx;
+    line-height: 86rpx;
+    float: left;
+    margin-left: 30rpx;
+}
+
+.set_default{
+    display: flex;
+    width: 662rpx;
+    margin: 0 auto;
+    margin-top: 36rpx;
+    justify-content: space-between;
+}
+.save{
+    width:662rpx;
+    height:88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    color: white;
+    background:rgba(0,0,0,1);
+    margin: 0 auto;
+    margin-top: 78rpx;
+    font-size: 28rpx;
+}

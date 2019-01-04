@@ -1,0 +1,50 @@
+<!--pages/afterSale/afterSale.wxml-->
+<view class="afterSale">
+  <text class="orderlaber">订单编号：<text class="ordernum">201801107002123</text></text>
+  <view class="aftersale_box" data-orderNO="{{item.orderNO}}" bindtap='goOrderdetail'>
+    <view class="orderlist">
+        <view class="order_left">
+            <image src="https://zhaocai-image.oss-cn-hangzhou.aliyuncs.com/img/positive.png" />
+        </view>
+        <view class="order_right">
+          <view class="nameortype">
+            <text class="productName">PLUM FOG</text>
+          </view>
+          
+          <text class="describe">鞋头／斜眼片／护条人造皮纯红</text>
+          <text class="shoesPrice"><text class="shoesRmb">¥</text>1119</text>
+        </view>
+    </view>
+  </view>
+  <view>
+    <text class="title">申请售后原因</text>
+    <view class="cause">
+      <textarea 
+      bindinput="bindTextAreaBlur"
+      placeholder="请描述申请售后服务的具体原因，文字、图片必须填写，还可上传最多5张图片哦～"
+      placeholder-style="font-size:20rpx;color:#CACACA;"
+      maxlength='300'
+      />
+      <text class="font_num">{{value.length}}/300</text>
+      <text class="line"></text>
+      <view class="camera">
+        <view wx:if="tempFiles.length > 0" wx:for="{{tempFiles}}" wx:key="item">
+          <image class="up_photo" src='{{item}}'/>
+        </view>
+        <image wx:if="{{tempFiles.length<5}}" bindtap='openPhoto' src='../../image/camera.png'/>
+      </view>
+    </view>
+  </view>
+  <view class="submitapply" bindtap="submitApply">
+    提交申请
+  </view>
+  <view wx:if="{{success}}">
+    <view class="mask">
+    </view>
+    <view class="success">
+        <image src="../../image/success.png" />
+        <text class="messge">提交成功</text>
+        <view class="suggestion">系统将在2天内作出反馈，请耐心等待</view>
+    </view>
+</view>
+</view>

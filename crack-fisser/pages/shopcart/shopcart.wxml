@@ -1,0 +1,61 @@
+<view>
+  <view class="noproduct" wx:if="{{items.length === 0}}">
+    <image src="../../image/shopcar.png" />
+    <text>购物车空空如也</text>
+  </view>
+  <view wx:else class="shopcart">
+    <view class="container">
+      <view class='content_box'>
+        <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="{{item.uniqueCode}}">
+          <view class="content">
+            <view class="shopcartbox_left" bindtap="singularSelect" data-price="{{item.cost}}" data-id="{{index}}">
+              <image wx:if="{{item.checked}}" src="../../image/select_ok.png" />
+              <image wx:if="{{!item.checked}}" src="../../image/select_no.png" />
+            </view>
+            <view class="shopcartbox_right">
+              <view class='left_img'>
+                <image src='{{item.img}}'></image>
+              </view>
+              <view class='right_text'>
+                <text class="shoesName">{{item.productName}}</text>
+                <text class="shoesTexture">{{item.describe}}</text>
+                <view class="shoesPrice"><i class="shoesRmb">¥</i>{{item.cost}}</view>
+              </view>
+            </view>
+            <view wx:if="{{del}}" class="del" bindtap="delClick" data-index="{{index}}"><image class="deleteimg" src="../../image/delete.png" /></view>
+            <view wx:else class="del" bindtap="confirmDel" data-code="{{item.uniqueCode}}" data-index="{{index}}"><text class="confirm_del">确认删除</text> </view>
+            
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <!--加入购物车与金额--->
+    <view class='total'>
+      <view class='total_left'>
+        <block wx:if="{{majorityPitchon}}">
+          <view bindtap='selectAll'>
+            <image src="../../image/select_ok.png" />        
+          </view>
+        </block>
+        <block wx:if="{{!majorityPitchon}}">
+          <view bindtap='selectNo'>
+            <image src="../../image/select_no.png" />        
+          </view>
+        </block>
+        <view class="check_all">全选
+          <text class="heji">合计：</text>
+          <text class="childname">¥</text>
+          <text class='pricenum'>{{total}}</text>
+        </view>
+
+      </view>
+      <view class='total_right' style="background:{{totalbackgr}}">
+        <text data-selectlist="{{selectList}}" bindtap="goConfirmorder">去付款（{{middlearr.length}}）</text>
+      </view>
+
+    </view>
+  </view>
+  
+</view>
+

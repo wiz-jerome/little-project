@@ -1,0 +1,45 @@
+<!--pages/address/address.wxml-->
+<view class="address">
+    <view>
+        <view class="inputname">
+            <input class="pinputname" bindinput="bindKeyInput" type="text" placeholder="姓名"/>            
+        </view>
+        <view class="inputname">
+            <input class="pinputname" bindinput="bindPhoneInput" type="number" maxlength="11" placeholder="电话" />
+        </view>
+        
+        <view class="pickerbox">
+            <view class="picker">
+                <!--省-->
+                <picker bindchange="bindPickerChange" bindtap="setProvin" value="{{provindex}}" range="{{provarray}}">
+                        <text class="inaddress">{{selectProvince?provarray[provindex]:"城市"}}</text>
+                </picker>
+            </view>
+            <view class="picker">
+                <!--市-->
+                <picker bindchange="bindcityChange" bindtap="setCity" value="{{cityindex}}" range="{{cityarray}}">
+                        <text class="inaddress">{{selectCity?cityarray[cityindex]:"城市"}}</text>
+                </picker>
+            </view>
+            <view class="picker">
+                <!--区域-->
+                <picker bindchange="bindareaChange" bindtap="setArea" value="{{areaindex}}" range="{{areaarray}}">
+                        <text class="inaddress">{{selectCity?areaarray[areaindex]:"区"}}</text>
+                </picker>
+            </view>
+            
+        </view>
+        
+        <view class="inputname">
+            <input class="pinputname" bindinput="bindDetailedAddress" type="text" placeholder="详细地址" />
+        </view>
+        <view class="set_default">
+            <text>设为默认</text>
+            <view class="body-view">
+                <switch bindchange="switchChange"/>
+            </view>
+        </view>
+
+        <view class="save" bindtap="insertAddress">保存</view>
+    </view>
+</view>

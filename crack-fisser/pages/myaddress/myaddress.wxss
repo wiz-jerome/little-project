@@ -1,0 +1,111 @@
+/* pages/myaddress/myaddress.wxss */
+page{
+   background: #fff;
+}
+.noproduct{
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+
+}
+.noproduct image{
+  width: 140rpx;
+  height: 140rpx;
+  position: absolute;
+
+  left: 50%;
+  margin-top: 350rpx;
+  margin-left: -70rpx;
+}
+.noproduct text{
+  width: 100%;
+  position: absolute;
+  margin-top: 530rpx;
+  color: #8F8F8F;
+  font-size: 36rpx;
+  text-align: center;
+  font-weight:400;
+}
+.address{
+  width: 90%;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 4px;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+.address_top{
+  width: 90%;
+  margin: 0 auto;
+}
+.address_top .addressbox{
+  width: 100%;
+  height: 166rpx;
+  border-bottom: 1px solid #E6E6E6;
+  display: flex;
+  justify-content: baseline;
+  position: relative;
+
+}
+.addressbox_left{
+  width: 10%;
+  position: relative;
+}
+.addressbox_left image{
+  width: 48rpx;
+  height: 48rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -24rpx;
+  margin-top: -24rpx;
+}
+.addressbox_right{
+  margin-left: 22rpx;
+}
+
+.addressbox_left_top{
+  font-size: 36rpx;
+  margin-top: 38rpx;
+}
+.addressbox_left_top .user_name,.user_num{
+  margin-right: 36rpx;
+}
+.default{
+  display: inline-block;
+  width: 80rpx;
+  height: 32rpx;
+  background: #00AACC;
+  color: #fff;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 32rpx;
+}
+.addressbox_left_bottom{
+  font-size: 24rpx;
+  color: #8F8F8F;
+  margin-top: 16rpx;
+}
+.addressbox_left_bottom .compile_address{
+  position: absolute;
+  color: #000;
+  right:43rpx;
+
+}
+
+
+.address_bottom{
+  width: 100%;
+  height: 125rpx;
+  line-height: 125rpx;
+  text-align: center;
+  color: #fff;
+  background: #000;
+  position: fixed;
+  bottom: 0;
+}

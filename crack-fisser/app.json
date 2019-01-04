@@ -1,0 +1,23 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/signin/signin",
+    "pages/shopcart/shopcart",
+    "pages/logs/logs",
+    "pages/address/address",
+    "pages/myaddress/myaddress",
+    "pages/compileaddress/compileaddress",
+    "pages/confirmorder/confirmorder",
+    "pages/myOrderlist/myOrderlist",
+    "pages/orderDetail/orderDetail",
+    "pages/userSuggestion/userSuggestion",
+    "pages/afterSale/afterSale",
+    "pages/logisticsMap/logisticsMap"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#F7F7F7",
+    "navigationBarTitleText": "裂物",
+    "navigationBarTextStyle":"black"
+  }
+}
